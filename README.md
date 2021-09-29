@@ -1,14 +1,16 @@
 # misskey.js
+
 **Strongly-typed official Misskey SDK for browsers/Node.js.**
 
-[![Test](https://github.com/misskey-dev/misskey.js/actions/workflows/test.yml/badge.svg)](https://github.com/misskey-dev/misskey.js/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/misskey-dev/misskey.js/branch/develop/graph/badge.svg?token=PbrTtk3nVD)](https://codecov.io/gh/misskey-dev/misskey.js)
+[![Test](https://github.com/TeamBlackCrystal/misskey.js/actions/workflows/test.yml/badge.svg)](https://github.com/TeamBlackCrystal/misskey.js/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/TeamBlackCrystal/misskey.js/branch/develop/graph/badge.svg?token=UpEpzbAkSd)](https://codecov.io/gh/TeamBlackCrystal/misskey.js)
 
-[![NPM](https://nodei.co/npm/misskey-js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/misskey-js)
+[![NPM](https://nodeico.herokuapp.com/@ayuskey/misskey.js.svg)](https://www.npmjs.com/package/@ayuskey/misskey.js)
 
 JavaScript(TypeScript)用の公式MisskeySDKです。ブラウザ/Node.js上で動作します。
 
 以下が提供されています:
+
 - ユーザー認証
 - APIリクエスト
 - ストリーミング
@@ -18,15 +20,16 @@ JavaScript(TypeScript)用の公式MisskeySDKです。ブラウザ/Node.js上で�
 対応するMisskeyのバージョンは12以上です。
 
 ## Install
+
 ```
-npm i misskey-js
+npm i @ayuskey/misskey.js
 ```
 
 # Usage
 インポートは以下のようにまとめて行えます。
 
 ``` ts
-import * as Misskey from 'misskey-js';
+import * as Misskey from '@ayuskey/misskey.js';
 ```
 
 便宜上、以後のコード例は上記のように`* as Misskey`としてインポートしている前提のものになります。
