@@ -35,10 +35,10 @@ export type Endpoints = {
 	'admin/update-meta': { req: TODO; res: TODO; };
 	'admin/vacuum': { req: TODO; res: TODO; };
 	'admin/accounts/create': { req: TODO; res: TODO; };
-	'admin/ad/create': { req: TODO; res: TODO; };
-	'admin/ad/delete': { req: { id: Ad['id']; }; res: null; };
-	'admin/ad/list': { req: TODO; res: TODO; };
-	'admin/ad/update': { req: TODO; res: TODO; };
+	//'admin/ad/create': { req: TODO; res: TODO; };
+	//'admin/ad/delete': { req: { id: Ad['id']; }; res: null; };
+	//'admin/ad/list': { req: TODO; res: TODO; };
+	//'admin/ad/update': { req: TODO; res: TODO; };
 	'admin/announcements/create': { req: TODO; res: TODO; };
 	'admin/announcements/delete': { req: { id: Announcement['id'] }; res: null; };
 	'admin/announcements/list': { req: TODO; res: TODO; };
@@ -317,6 +317,7 @@ export type Endpoints = {
 	'following/requests/reject': { req: { userId: User['id'] }; res: null; };
 
 	// gallery
+	/* Ayuskeyには現状ない
 	'gallery/featured': { req: TODO; res: TODO; };
 	'gallery/popular': { req: TODO; res: TODO; };
 	'gallery/posts': { req: TODO; res: TODO; };
@@ -326,6 +327,7 @@ export type Endpoints = {
 	'gallery/posts/show': { req: TODO; res: TODO; };
 	'gallery/posts/unlike': { req: TODO; res: TODO; };
 	'gallery/posts/update': { req: TODO; res: TODO; };
+	*/
 
 	// games
 	'games/reversi/games': { req: TODO; res: TODO; };
@@ -413,6 +415,7 @@ export type Endpoints = {
 		noCrawle?: boolean;
 		isBot?: boolean;
 		isCat?: boolean;
+		isLady?: boolean;
 		injectFeaturedNote?: boolean;
 		receiveAnnouncementEmail?: boolean;
 		alwaysMarkNsfw?: boolean;
@@ -454,10 +457,10 @@ export type Endpoints = {
 	}; };
 
 	// miauth
-	'miauth/gen-token': { req: TODO; res: TODO; };
+	//'miauth/gen-token': { req: TODO; res: TODO; };
 
 	// mute
-	'mute/create': { req: TODO; res: TODO; };
+	'mute/create': { req: { userId: User['id'] }; res: null; };
 	'mute/delete': { req: { userId: User['id'] }; res: null; };
 	'mute/list': { req: TODO; res: TODO; };
 
@@ -486,6 +489,7 @@ export type Endpoints = {
 			expiresAt?: null | number;
 			expiredAfter?: null | number;
 		};
+		geo?: null | any;
 	}; res: { createdNote: Note }; };
 	'notes/delete': { req: { noteId: Note['id']; }; res: null; };
 	'notes/favorites/create': { req: { noteId: Note['id']; }; res: null; };
@@ -602,4 +606,7 @@ export type Endpoints = {
 		};
 	}; };
 	'users/stats': { req: TODO; res: TODO; };
+
+	// version
+	'version': { req: null; res: { version: string; }; };
 };

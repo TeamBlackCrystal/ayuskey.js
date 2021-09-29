@@ -192,7 +192,10 @@ export type LiteInstanceMetadata = {
 	name: string | null;
 	uri: string;
 	description: string | null;
-	tosUrl: string | null;
+	langs: string[] | null;
+	ToSUrl: string | null;
+	ToSTextUrl: string | null;
+	announcements: Record<string, any>[];
 	disableRegistration: boolean;
 	disableLocalTimeline: boolean;
 	disableGlobalTimeline: boolean;
@@ -210,6 +213,7 @@ export type LiteInstanceMetadata = {
 	enableDiscordIntegration: boolean;
 	enableServiceWorker: boolean;
 	emojis: CustomEmoji[];
+	/* Ayuskeyには現状ない
 	ads: {
 		id: ID;
 		ratio: number;
@@ -217,6 +221,7 @@ export type LiteInstanceMetadata = {
 		url: string;
 		imageUrl: string;
 	}[];
+	*/
 };
 
 export type DetailedInstanceMetadata = LiteInstanceMetadata & {
