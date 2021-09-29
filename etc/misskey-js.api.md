@@ -243,24 +243,6 @@ export type Endpoints = {
         req: TODO;
         res: TODO;
     };
-    'admin/ad/create': {
-        req: TODO;
-        res: TODO;
-    };
-    'admin/ad/delete': {
-        req: {
-            id: Ad['id'];
-        };
-        res: null;
-    };
-    'admin/ad/list': {
-        req: TODO;
-        res: TODO;
-    };
-    'admin/ad/update': {
-        req: TODO;
-        res: TODO;
-    };
     'admin/announcements/create': {
         req: TODO;
         res: TODO;
@@ -1030,44 +1012,6 @@ export type Endpoints = {
         };
         res: null;
     };
-    'gallery/featured': {
-        req: TODO;
-        res: TODO;
-    };
-    'gallery/popular': {
-        req: TODO;
-        res: TODO;
-    };
-    'gallery/posts': {
-        req: TODO;
-        res: TODO;
-    };
-    'gallery/posts/create': {
-        req: TODO;
-        res: TODO;
-    };
-    'gallery/posts/delete': {
-        req: {
-            postId: GalleryPost['id'];
-        };
-        res: null;
-    };
-    'gallery/posts/like': {
-        req: TODO;
-        res: TODO;
-    };
-    'gallery/posts/show': {
-        req: TODO;
-        res: TODO;
-    };
-    'gallery/posts/unlike': {
-        req: TODO;
-        res: TODO;
-    };
-    'gallery/posts/update': {
-        req: TODO;
-        res: TODO;
-    };
     'games/reversi/games': {
         req: TODO;
         res: TODO;
@@ -1332,6 +1276,7 @@ export type Endpoints = {
             noCrawle?: boolean;
             isBot?: boolean;
             isCat?: boolean;
+            isLady?: boolean;
             injectFeaturedNote?: boolean;
             receiveAnnouncementEmail?: boolean;
             alwaysMarkNsfw?: boolean;
@@ -1442,13 +1387,11 @@ export type Endpoints = {
             };
         };
     };
-    'miauth/gen-token': {
-        req: TODO;
-        res: TODO;
-    };
     'mute/create': {
-        req: TODO;
-        res: TODO;
+        req: {
+            userId: User['id'];
+        };
+        res: null;
     };
     'mute/delete': {
         req: {
@@ -1507,6 +1450,7 @@ export type Endpoints = {
                 expiresAt?: null | number;
                 expiredAfter?: null | number;
             };
+            geo?: null | any;
         };
         res: {
             createdNote: Note;
@@ -1987,6 +1931,12 @@ export type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'version': {
+        req: null;
+        res: {
+            version: string;
+        };
+    };
 };
 
 declare namespace entities {
@@ -2121,7 +2071,10 @@ type LiteInstanceMetadata = {
     name: string | null;
     uri: string;
     description: string | null;
-    tosUrl: string | null;
+    langs: string[] | null;
+    ToSUrl: string | null;
+    ToSTextUrl: string | null;
+    announcements: Record<string, any>[];
     disableRegistration: boolean;
     disableLocalTimeline: boolean;
     disableGlobalTimeline: boolean;
@@ -2139,13 +2092,6 @@ type LiteInstanceMetadata = {
     enableDiscordIntegration: boolean;
     enableServiceWorker: boolean;
     emojis: CustomEmoji[];
-    ads: {
-        id: ID;
-        ratio: number;
-        place: string;
-        url: string;
-        imageUrl: string;
-    }[];
 };
 
 // @public (undocumented)
@@ -2432,7 +2378,7 @@ type UserSorting = '+follower' | '-follower' | '+createdAt' | '-createdAt' | '+u
 //
 // src/api.types.ts:16:32 - (ae-forgotten-export) The symbol "TODO" needs to be exported by the entry point index.d.ts
 // src/api.types.ts:18:25 - (ae-forgotten-export) The symbol "NoParams" needs to be exported by the entry point index.d.ts
-// src/api.types.ts:595:18 - (ae-forgotten-export) The symbol "ShowUserReq" needs to be exported by the entry point index.d.ts
+// src/api.types.ts:599:18 - (ae-forgotten-export) The symbol "ShowUserReq" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 
