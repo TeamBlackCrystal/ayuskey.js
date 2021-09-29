@@ -1,7 +1,7 @@
 {
-	"name": "misskey-js",
+	"name": "@ayuskey/misskey.js",
 	"version": "0.0.6",
-	"description": "Misskey SDK for JavaScript",
+	"description": "Ayuskey SDK for JavaScript (fork of misskey.js)",
 	"main": "./built/index.js",
 	"types": "./built/index.d.ts",
 	"scripts": {
@@ -16,7 +16,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/misskey-dev/misskey.js.git"
+		"url": "git+https://github.com/TeamBlackCrystal/misskey.js"
 	},
 	"devDependencies": {
 		"@microsoft/api-extractor": "^7.18.4",
