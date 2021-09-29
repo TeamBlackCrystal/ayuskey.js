@@ -404,5 +404,15 @@ export type Signin = {
 	success: boolean;
 };
 
+export type HashtagList = {
+	attachedLocalUsersCount: number;
+	attachedRemoteUsersCount: number;
+	attachedUsersCount: number;
+	mentionedLocalUsersCount: number;
+	mentionedRemoteUsersCount: number;
+	mentionedUsersCount: number;
+	tag: string;
+}
+
 export type UserSorting = '+follower' | '-follower' | '+createdAt' | '-createdAt' | '+updatedAt' | '-updatedAt';
 export type OriginType = 'combined' | 'local' | 'remote';

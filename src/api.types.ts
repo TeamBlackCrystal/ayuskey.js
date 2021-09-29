@@ -2,7 +2,7 @@ import {
 	Ad, Announcement, Antenna, App, AuthSession, Blocking, Channel, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, GalleryPost, Instance, InstanceMetadata,
 	LiteInstanceMetadata,
 	MeDetailed,
-	Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage
+	Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage, HashtagList
 } from './entities';
 
 type TODO = Record<string, any> | null;
@@ -341,7 +341,7 @@ export type Endpoints = {
 	'get-online-users-count': { req: NoParams; res: { count: number; }; };
 
 	// hashtags
-	'hashtags/list': { req: TODO; res: TODO; };
+	'hashtags/list': { req: TODO; res: HashtagList[]; };
 	'hashtags/search': { req: TODO; res: TODO; };
 	'hashtags/show': { req: TODO; res: TODO; };
 	'hashtags/trend': { req: TODO; res: TODO; };
