@@ -213,6 +213,9 @@ export type LiteInstanceMetadata = {
 	enableDiscordIntegration: boolean;
 	enableServiceWorker: boolean;
 	emojis: CustomEmoji[];
+	mascotImageUrl: string;
+	bannerUrl: string;
+	iconUrl: string;
 	/* Ayuskeyには現状ない
 	ads: {
 		id: ID;
