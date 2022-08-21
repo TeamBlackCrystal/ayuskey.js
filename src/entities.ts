@@ -27,7 +27,43 @@ export type UserLite = {
 export type UserDetailed = UserLite & {
 	isLocked: boolean;
 	pinnedNotes: Note[];
-	// TODO
+	isAdmin: boolean
+	isBot: boolean
+	isCat: boolean
+	isLady: boolean
+	isVerified: boolean
+	isPremium: boolean
+	isModerator: boolean
+	isSilenced: boolean
+	isSuspended: boolean
+	description: string
+  location: string | null
+  birthday: string
+  fields: {name: string, value: string}[]
+  followersCount: number
+  followingCount: number
+  notesCount: number
+  pinnedNoteIds: string[]
+  pinnedPageId: string
+  pinnedPage: Page
+  twoFactorEnabled: boolean
+  usePasswordLessLogin: boolean
+  securityKeys: boolean
+  twitter: {
+		id: number,
+		screenName: string
+	}
+  github: {
+    id: number
+    login: string
+  }
+  discord: {
+		id: number
+		username: string
+		discriminator: string
+	}
+  movedToUserId: any | null
+  movedToUser: any | null
 };
 
 export type UserGroup = TODO;
