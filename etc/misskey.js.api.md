@@ -2130,7 +2130,20 @@ type MeDetailed = UserDetailed & {
     noCrawle: boolean;
     isExplorable: boolean;
     hideOnlineStatus: boolean;
-    mutedWords: string[][];
+    mutedWords: string[];
+    autoWatch: boolean;
+    alwaysMarkNsfw: boolean;
+    carefulBot: boolean;
+    carefulMassive: boolean;
+    hasUnreadSpecifiedNotes: boolean;
+    hasUnreadMentions: boolean;
+    hasUnreadAnnouncement: boolean;
+    hasUnreadAntenna: boolean;
+    hasUnreadChannel: boolean;
+    hasUnreadMessagingMessage: boolean;
+    hasUnreadNotification: boolean;
+    pendingReceivedFollowRequestsCount: boolean;
+    mutingNotificationTypes: any[];
     [other: string]: any;
 };
 
@@ -2376,6 +2389,46 @@ type User = UserLite | UserDetailed | NoteUser;
 type UserDetailed = UserLite & {
     isLocked: boolean;
     pinnedNotes: Note[];
+    isAdmin: boolean;
+    isBot: boolean;
+    isCat: boolean;
+    isLady: boolean;
+    isVerified: boolean;
+    isPremium: boolean;
+    isModerator: boolean;
+    isSilenced: boolean;
+    isSuspended: boolean;
+    description: string;
+    location: string | null;
+    birthday: string;
+    fields: {
+        name: string;
+        value: string;
+    }[];
+    followersCount: number;
+    followingCount: number;
+    notesCount: number;
+    pinnedNoteIds: string[];
+    pinnedPageId: string;
+    pinnedPage: Page;
+    twoFactorEnabled: boolean;
+    usePasswordLessLogin: boolean;
+    securityKeys: boolean;
+    twitter: {
+        id: number;
+        screenName: string;
+    };
+    github: {
+        id: number;
+        login: string;
+    };
+    discord: {
+        id: number;
+        username: string;
+        discriminator: string;
+    };
+    movedToUserId: any | null;
+    movedToUser: any | null;
 };
 
 // @public (undocumented)
