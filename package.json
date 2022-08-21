@@ -8,8 +8,8 @@
 		"build": "yarn run tsc",
 		"tsc": "tsc",
 		"tsd": "tsd",
-		"api": "yarn dlx api-extractor run --local --verbose",
-		"api-prod": "yarn dlx api-extractor run --verbose",
+		"api": "yarn api-extractor run --local --verbose",
+		"api-prod": "yarn api-extractor run --verbose",
 		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"jest": "jest --coverage --detectOpenHandles",
 		"test": "yarn jest && yarn tsd"
