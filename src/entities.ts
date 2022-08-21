@@ -82,7 +82,20 @@ export type MeDetailed = UserDetailed & {
 	noCrawle: boolean;
 	isExplorable: boolean;
 	hideOnlineStatus: boolean;
-	mutedWords: string[][];
+	mutedWords: string[];
+	autoWatch: boolean
+  alwaysMarkNsfw: boolean
+  carefulBot: boolean
+  carefulMassive: boolean
+  hasUnreadSpecifiedNotes: boolean
+  hasUnreadMentions: boolean
+  hasUnreadAnnouncement: boolean
+  hasUnreadAntenna: boolean
+  hasUnreadChannel: boolean
+  hasUnreadMessagingMessage: boolean
+  hasUnreadNotification: boolean
+  pendingReceivedFollowRequestsCount: boolean
+  mutingNotificationTypes: any[]
 	[other: string]: any;
 };
 
