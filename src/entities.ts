@@ -4,7 +4,11 @@ export type DateString = string;
 type TODO = Record<string, any>;
 
 // NOTE: 極力この型を使うのは避け、UserLite か UserDetailed か明示するように
-export type User = UserLite | UserDetailed;
+export type User = UserLite | UserDetailed | NoteUser;
+
+export type NoteUser = UserLite & {
+	instance?: LiteInstance
+}
 
 export type UserLite = {
 	id: ID;
@@ -69,7 +73,7 @@ export type Note = {
 	createdAt: DateString;
 	text: string | null;
 	cw: string | null;
-	user: User;
+	user: NoteUser;
 	userId: User['id'];
 	reply?: Note;
 	replyId: Note['id'];
@@ -366,6 +370,16 @@ export type Blocking = {
 	blockeeId: User['id'];
 	blockee: UserDetailed;
 };
+
+export type LiteInstance = {
+	host: string
+  name: string
+  softwareName: string
+  softwareVersion: string
+  iconUrl: string
+  faviconUrl: string
+  themeColor: string
+}
 
 export type Instance = {
 	id: ID;
