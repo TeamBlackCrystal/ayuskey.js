@@ -17,7 +17,8 @@ JavaScript(TypeScript)用の公式MisskeySDKです。ブラウザ/Node.js上で�
 - ユーティリティ関数
 - Misskeyの各種型定義
 
-対応するMisskeyのバージョンは12以上です。
+対応するAyuskeyのバージョンは5.22.0以上です。
+v12での動作は保証しません。
 
 ## Install
 

@@ -169,7 +169,8 @@ describe('API', () => {
 			await cli.request('i');
 		} catch (e) {
 			expect(isAPIError(e)).toEqual(true);
-			expect(e.id).toEqual('5d37dbcb-891e-41ca-a3d6-e690c97775ac');
+			// 動かないから仕方ないね
+			expect((e as any).id).toEqual('5d37dbcb-891e-41ca-a3d6-e690c97775ac');
 		}
 	});
 
