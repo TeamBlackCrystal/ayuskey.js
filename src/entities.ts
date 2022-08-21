@@ -371,6 +371,8 @@ export type Blocking = {
 	blockee: UserDetailed;
 };
 
+// TODO: const Instance = DetailedInstance | LiteInstance
+
 export type LiteInstance = {
 	host: string
   name: string
