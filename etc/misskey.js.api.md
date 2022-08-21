@@ -1044,7 +1044,7 @@ export type Endpoints = {
     };
     'hashtags/list': {
         req: TODO;
-        res: TODO;
+        res: HashtagList[];
     };
     'hashtags/search': {
         req: TODO;
@@ -1979,6 +1979,7 @@ declare namespace entities {
         Blocking,
         Instance,
         Signin,
+        HashtagList,
         UserSorting,
         OriginType
     }
@@ -2023,6 +2024,17 @@ type FollowRequest = {
 
 // @public (undocumented)
 type GalleryPost = TODO_2;
+
+// @public (undocumented)
+type HashtagList = {
+    attachedLocalUsersCount: number;
+    attachedRemoteUsersCount: number;
+    attachedUsersCount: number;
+    mentionedLocalUsersCount: number;
+    mentionedRemoteUsersCount: number;
+    mentionedUsersCount: number;
+    tag: string;
+};
 
 // @public (undocumented)
 type ID = string;
@@ -2092,6 +2104,9 @@ type LiteInstanceMetadata = {
     enableDiscordIntegration: boolean;
     enableServiceWorker: boolean;
     emojis: CustomEmoji[];
+    mascotImageUrl: string;
+    bannerUrl: string;
+    iconUrl: string;
 };
 
 // @public (undocumented)
