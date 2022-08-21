@@ -1944,6 +1944,7 @@ declare namespace entities {
         ID,
         DateString,
         User,
+        NoteUser,
         UserLite,
         UserDetailed,
         UserGroup,
@@ -1977,6 +1978,7 @@ declare namespace entities {
         FollowingFolloweePopulated,
         FollowingFollowerPopulated,
         Blocking,
+        LiteInstance,
         Instance,
         Signin,
         HashtagList,
@@ -2076,6 +2078,17 @@ type InstanceMetadata = LiteInstanceMetadata | DetailedInstanceMetadata;
 function isAPIError(reason: any): reason is APIError;
 
 // @public (undocumented)
+type LiteInstance = {
+    host: string;
+    name: string;
+    softwareName: string;
+    softwareVersion: string;
+    iconUrl: string;
+    faviconUrl: string;
+    themeColor: string;
+};
+
+// @public (undocumented)
 type LiteInstanceMetadata = {
     maintainerName: string | null;
     maintainerEmail: string | null;
@@ -2144,7 +2157,7 @@ type Note = {
     createdAt: DateString;
     text: string | null;
     cw: string | null;
-    user: User;
+    user: NoteUser;
     userId: User['id'];
     reply?: Note;
     replyId: Note['id'];
@@ -2184,6 +2197,11 @@ type NoteReaction = {
     createdAt: DateString;
     user: UserLite;
     type: string;
+};
+
+// @public (undocumented)
+type NoteUser = UserLite & {
+    instance?: LiteInstance;
 };
 
 // @public (undocumented)
@@ -2352,7 +2370,7 @@ export class Stream extends EventEmitter<StreamEvents> {
 }
 
 // @public (undocumented)
-type User = UserLite | UserDetailed;
+type User = UserLite | UserDetailed | NoteUser;
 
 // @public (undocumented)
 type UserDetailed = UserLite & {
