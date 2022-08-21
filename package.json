@@ -5,14 +5,14 @@
 	"main": "./built/index.js",
 	"types": "./built/index.d.ts",
 	"scripts": {
-		"build": "npm run tsc",
+		"build": "yarn run tsc",
 		"tsc": "tsc",
 		"tsd": "tsd",
-		"api": "npx api-extractor run --local --verbose",
-		"api-prod": "npx api-extractor run --verbose",
+		"api": "yarn dlx api-extractor run --local --verbose",
+		"api-prod": "yarn dlx api-extractor run --verbose",
 		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"jest": "jest --coverage --detectOpenHandles",
-		"test": "npm run jest && npm run tsd"
+		"test": "yarn jest && yarn tsd"
 	},
 	"license": "MIT",
 	"repository": {
