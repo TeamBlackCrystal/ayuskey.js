@@ -18,10 +18,7 @@ export type UserLite = {
 	onlineStatus: 'online' | 'active' | 'offline' | 'unknown';
 	avatarUrl: string;
 	avatarBlurhash: string;
-	emojis: {
-		name: string;
-		url: string;
-	}[];
+	emojis: CustomEmojiLite[];
 };
 
 export type UserDetailed = UserLite & {
@@ -142,10 +139,7 @@ export type Note = {
 			votes: number;
 		}[];
 	};
-	emojis: {
-		name: string;
-		url: string;
-	}[];
+	emojis: CustomEmojiLite[];
 };
 
 export type NoteReaction = {
@@ -230,10 +224,13 @@ export type MessagingMessage = {
 	groupId: UserGroup['id'] | null;
 };
 
-export type CustomEmoji = {
-	id: string;
+export type CustomEmojiLite = {
 	name: string;
 	url: string;
+}
+
+export type CustomEmoji = CustomEmojiLite & {
+	id: string;
 	category: string;
 	aliases: string[];
 };
