@@ -117,12 +117,16 @@ type Channel = {
 type Clip = TODO_2;
 
 // @public (undocumented)
-type CustomEmoji = {
+type CustomEmoji = CustomEmojiLite & {
     id: string;
-    name: string;
-    url: string;
     category: string;
     aliases: string[];
+};
+
+// @public (undocumented)
+type CustomEmojiLite = {
+    name: string;
+    url: string;
 };
 
 // @public (undocumented)
@@ -1957,6 +1961,7 @@ declare namespace entities {
         NoteReaction,
         Notification_2 as Notification,
         MessagingMessage,
+        CustomEmojiLite,
         CustomEmoji,
         LiteInstanceMetadata,
         DetailedInstanceMetadata,
@@ -2190,10 +2195,7 @@ type Note = {
             votes: number;
         }[];
     };
-    emojis: {
-        name: string;
-        url: string;
-    }[];
+    emojis: CustomEmojiLite[];
 };
 
 // @public (undocumented)
@@ -2451,10 +2453,7 @@ type UserLite = {
     onlineStatus: 'online' | 'active' | 'offline' | 'unknown';
     avatarUrl: string;
     avatarBlurhash: string;
-    emojis: {
-        name: string;
-        url: string;
-    }[];
+    emojis: CustomEmojiLite[];
 };
 
 // @public (undocumented)
