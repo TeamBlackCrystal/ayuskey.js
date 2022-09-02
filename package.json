@@ -1,6 +1,6 @@
 {
 	"name": "ayuskey.js",
-	"version": "1.0.0-rc.7",
+	"version": "1.0.0-rc.8",
 	"description": "Ayuskey SDK for JavaScript (fork of misskey.js)",
 	"main": "./built/index.js",
 	"types": "./built/index.d.ts",
