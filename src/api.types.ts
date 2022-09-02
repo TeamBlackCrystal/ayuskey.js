@@ -1,9 +1,7 @@
 import {
-	Ad, Announcement, Antenna, App, AuthSession, Blocking, Channel, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, GalleryPost, Instance, InstanceMetadata,
-	LiteInstanceMetadata,
+	Announcement, Antenna, App, AuthSession, Blocking, Channel, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, Instance, LiteInstanceMetadata,
 	MeDetailed,
-	Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage, HashtagList
-} from './entities';
+	Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage, HashtagList} from './entities';
 
 type TODO = Record<string, any> | null;
 
@@ -517,7 +515,16 @@ export type Endpoints = {
 		untilId?: Note['id']
 		limit?: number
 	}; res: Note[]; };
-	'notes/search': { req: TODO; res: TODO; };
+	'notes/search': { req: {
+		query: string
+		sinceId?: Note['id']
+		untilId?: Note['id']
+		limit?: number
+		offset?: number
+		host?: string
+		userId?: string
+		channelId?: string
+	}; res: TODO; };
 	'notes/show': { req: { noteId: Note['id']; }; res: Note; };
 	'notes/state': { req: TODO; res: TODO; };
 	'notes/timeline': { req: { limit?: number; sinceId?: Note['id']; untilId?: Note['id']; sinceDate?: number; untilDate?: number; }; res: Note[]; };
