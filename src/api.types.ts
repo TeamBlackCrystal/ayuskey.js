@@ -506,7 +506,17 @@ export type Endpoints = {
 	'notes/reactions/delete': { req: { noteId: Note['id']; }; res: null; };
 	'notes/renotes': { req: { limit?: number; sinceId?: Note['id']; untilId?: Note['id']; noteId: Note['id']; }; res: Note[]; };
 	'notes/replies': { req: { limit?: number; sinceId?: Note['id']; untilId?: Note['id']; noteId: Note['id']; }; res: Note[]; };
-	'notes/search-by-tag': { req: TODO; res: TODO; };
+	'notes/search-by-tag': { req: {
+		tag: string,
+		query?: string[],
+		reply?: boolean
+		renote?: boolean
+		withFiles?: boolean
+		poll?: boolean
+		sinceId?: Note['id']
+		untilId?: Note['id']
+		limit?: number
+	}; res: Note[]; };
 	'notes/search': { req: TODO; res: TODO; };
 	'notes/show': { req: { noteId: Note['id']; }; res: Note; };
 	'notes/state': { req: TODO; res: TODO; };
