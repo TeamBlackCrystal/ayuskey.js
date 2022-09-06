@@ -117,12 +117,16 @@ type Channel = {
 type Clip = TODO_2;
 
 // @public (undocumented)
-type CustomEmoji = {
+type CustomEmoji = CustomEmojiLite & {
     id: string;
-    name: string;
-    url: string;
     category: string;
     aliases: string[];
+};
+
+// @public (undocumented)
+type CustomEmojiLite = {
+    name: string;
+    url: string;
 };
 
 // @public (undocumented)
@@ -1568,11 +1572,30 @@ export type Endpoints = {
         res: Note[];
     };
     'notes/search-by-tag': {
-        req: TODO;
-        res: TODO;
+        req: {
+            tag: string;
+            query?: string[];
+            reply?: boolean;
+            renote?: boolean;
+            withFiles?: boolean;
+            poll?: boolean;
+            sinceId?: Note['id'];
+            untilId?: Note['id'];
+            limit?: number;
+        };
+        res: Note[];
     };
     'notes/search': {
-        req: TODO;
+        req: {
+            query: string;
+            sinceId?: Note['id'];
+            untilId?: Note['id'];
+            limit?: number;
+            offset?: number;
+            host?: string;
+            userId?: string;
+            channelId?: string;
+        };
         res: TODO;
     };
     'notes/show': {
@@ -1957,6 +1980,7 @@ declare namespace entities {
         NoteReaction,
         Notification_2 as Notification,
         MessagingMessage,
+        CustomEmojiLite,
         CustomEmoji,
         LiteInstanceMetadata,
         DetailedInstanceMetadata,
@@ -2190,10 +2214,7 @@ type Note = {
             votes: number;
         }[];
     };
-    emojis: {
-        name: string;
-        url: string;
-    }[];
+    emojis: CustomEmojiLite[];
 };
 
 // @public (undocumented)
@@ -2451,10 +2472,7 @@ type UserLite = {
     onlineStatus: 'online' | 'active' | 'offline' | 'unknown';
     avatarUrl: string;
     avatarBlurhash: string;
-    emojis: {
-        name: string;
-        url: string;
-    }[];
+    emojis: CustomEmojiLite[];
 };
 
 // @public (undocumented)
@@ -2462,9 +2480,9 @@ type UserSorting = '+follower' | '-follower' | '+createdAt' | '-createdAt' | '+u
 
 // Warnings were encountered during analysis:
 //
-// src/api.types.ts:16:32 - (ae-forgotten-export) The symbol "TODO" needs to be exported by the entry point index.d.ts
-// src/api.types.ts:18:25 - (ae-forgotten-export) The symbol "NoParams" needs to be exported by the entry point index.d.ts
-// src/api.types.ts:599:18 - (ae-forgotten-export) The symbol "ShowUserReq" needs to be exported by the entry point index.d.ts
+// src/api.types.ts:14:32 - (ae-forgotten-export) The symbol "TODO" needs to be exported by the entry point index.d.ts
+// src/api.types.ts:16:25 - (ae-forgotten-export) The symbol "NoParams" needs to be exported by the entry point index.d.ts
+// src/api.types.ts:616:18 - (ae-forgotten-export) The symbol "ShowUserReq" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 
