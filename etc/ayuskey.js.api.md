@@ -12,7 +12,7 @@ export type Acct = {
     host: string | null;
 };
 
-// Warning: (ae-forgotten-export) The symbol "TODO" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "TODO_2" needs to be exported by the entry point index.d.ts
 //
 // @public (undocumented)
 type Ad = TODO_2;
