@@ -1119,10 +1119,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.10.1":
-  version: 16.10.1
-  resolution: "@types/node@npm:16.10.1"
-  checksum: 84d7f082e9421fdf1f08dbe00b66848897b2675eacc94a4fa445c4d34cef57c901ecd3276d03ebe110607a848d3df0ab33816aeff51a234e036111dd8ef1422f
+"@types/node@npm:16.11.58":
+  version: 16.11.58
+  resolution: "@types/node@npm:16.11.58"
+  checksum: efdf14c62e6c1a8e758416aaa3ae4b81015ffd4e1f31c05680d1242817ba23f0b4b1345886fe5aeb3c05d818bcaed1a7af4d637e7cca5723a5e4ac8b759d3ace
   languageName: node
   linkType: hard
 
@@ -1473,7 +1473,7 @@ __metadata:
   dependencies:
     "@microsoft/api-extractor": 7.29.5
     "@types/jest": ^28.1.7
-    "@types/node": 16.10.1
+    "@types/node": 16.11.58
     "@typescript-eslint/eslint-plugin": 5.36.2
     "@typescript-eslint/parser": 5.36.2
     autobind-decorator: ^2.4.0
