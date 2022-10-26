@@ -20,7 +20,7 @@
 		"url": "git+https://github.com/TeamBlackCrystal/misskey.js"
 	},
 	"devDependencies": {
-		"@microsoft/api-extractor": "7.33.4",
+		"@microsoft/api-extractor": "7.33.5",
 		"@types/jest": "29.2.0",
 		"@types/node": "16.18.0",
 		"@typescript-eslint/eslint-plugin": "5.41.0",
