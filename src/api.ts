@@ -35,24 +35,26 @@ type GetCaseResult<E extends keyof Endpoints, P extends Endpoints[E]['req'], C e
 	StrictExtract<Endpoints[E]['res']['$switch']['$cases'][C], [P, any]>[1];
 
 export class APIClient {
+	public pendingApiRequestsCount;
 	public origin: string;
-	public credential: string | null | undefined;
+	public i: string | null | undefined;
 	public fetch: FetchLike;
 
 	constructor(opts: {
 		origin: APIClient['origin'];
-		credential?: APIClient['credential'];
+		i?: APIClient['i'];
 		fetch?: APIClient['fetch'] | null | undefined;
 	}) {
+		this.pendingApiRequestsCount = 0;
 		this.origin = opts.origin;
-		this.credential = opts.credential;
+		this.i = opts.i;
 		// ネイティブ関数をそのまま変数に代入して使おうとするとChromiumではIllegal invocationエラーが発生するため、
 		// 環境で実装されているfetchを使う場合は無名関数でラップして使用する
 		this.fetch = opts.fetch || ((...args) => fetch(...args));
 	}
 
 	public request<E extends keyof Endpoints, P extends Endpoints[E]['req']>(
-		endpoint: E, params: P = {} as P, credential?: string | null | undefined,
+		endpoint: E, options: {params?: P, i?: string | null} = {params: {} as P, i: null}
 	): Promise<Endpoints[E]['res'] extends { $switch: { $cases: [any, any][]; $default: any; }; }
 		?
 			IsCaseMatched<E, P, 0> extends true ? GetCaseResult<E, P, 0> :
@@ -68,12 +70,16 @@ export class APIClient {
 			Endpoints[E]['res']['$switch']['$default']
 		: Endpoints[E]['res']>
 	{
+		const onFinally = () => {
+			this.pendingApiRequestsCount--;
+		};
+		this.pendingApiRequestsCount++;
 		const promise = new Promise((resolve, reject) => {
 			this.fetch(`${this.origin}/api/${endpoint}`, {
 				method: 'POST',
 				body: JSON.stringify({
-					...params,
-					i: credential !== undefined ? credential : this.credential
+					...options.params,
+					i: options.i !== undefined ? options.i : this.i
 				}),
 				credentials: 'omit',
 				cache: 'no-cache'
@@ -92,7 +98,7 @@ export class APIClient {
 				}
 			}).catch(reject);
 		});
-	
+		promise.then(onFinally, onFinally)
 		return promise as any;
 	}
 }
