@@ -1532,6 +1532,7 @@ __metadata:
     jest-websocket-mock: ^2.4.0
     mock-socket: ^9.1.5
     reconnecting-websocket: ^4.4.0
+    strictcat: ^0.0.1-alpha.16
     ts-jest: 29.0.3
     ts-node: 10.9.1
     tsd: 0.24.1
@@ -4820,6 +4821,13 @@ __metadata:
   dependencies:
     escape-string-regexp: ^2.0.0
   checksum: 76b69da0f5b48a34a0f93c98ee2a96544d2c4ca2557f7eef5ddb961d3bdc33870b46f498a84a7c4f4ffb781df639840e7ebf6639164ed4da5e1aeb659615b9c7
+  languageName: node
+  linkType: hard
+
+"strictcat@npm:^0.0.1-alpha.16":
+  version: 0.0.1-alpha.16
+  resolution: "strictcat@npm:0.0.1-alpha.16"
+  checksum: 83839732debeeed1e04c1fd4281a5ef3b258529a5d2d9fa60410de46ff5b32069c86e0f3879891079eae8f9a90b0475958aedf725b25516349ffbd350b38a0f7
   languageName: node
   linkType: hard
 
