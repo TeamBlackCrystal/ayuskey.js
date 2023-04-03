@@ -4825,9 +4825,9 @@ __metadata:
   linkType: hard
 
 "strictcat@npm:^0.0.1-alpha.16":
-  version: 0.0.1-alpha.16
-  resolution: "strictcat@npm:0.0.1-alpha.16"
-  checksum: 83839732debeeed1e04c1fd4281a5ef3b258529a5d2d9fa60410de46ff5b32069c86e0f3879891079eae8f9a90b0475958aedf725b25516349ffbd350b38a0f7
+  version: 0.0.1-alpha.20
+  resolution: "strictcat@npm:0.0.1-alpha.20"
+  checksum: d73a1b8f3df8e3ee2383e734d4ef1093a3d9a5cb621f9d271ac8db54a5c66c168ef547c847a89d20c59b0fe92cad6ddb9777fde6f3ec551e547a4742195c3726
   languageName: node
   linkType: hard
 
